@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raina Khanam | Data Analyst Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f7fa;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .profile-pic {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 4px solid white;
+            object-fit: cover;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .tagline {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: white;
+            color: #667eea;
+            padding: 10px 25px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 5px;
+            transition: transform 0.3s;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid white;
+            color: white;
+        }
+
+        /* Sections */
+        section {
+            padding: 60px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 40px;
+            color: #333;
+        }
+
+        /* Skills */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .skill-category {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .skill-category h3 {
+            color: #667eea;
+            margin-bottom: 15px;
+        }
+
+        .skill-items {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skill-tag {
+            background: #e0e7ff;
+            color: #667eea;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+
+        /* Projects */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .project-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+        }
+
+        .project-info {
+            padding: 20px;
+        }
+
+        .project-title {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .project-desc {
+            color: #666;
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 15px;
+        }
+
+        .tech-tag {
+            background: #f0f0f0;
+            padding: 3px 10px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+        }
+
+        .project-links a {
+            color: #667eea;
+            text-decoration: none;
+            margin-right: 15px;
+            font-size: 0.9rem;
+        }
+
+        .project-links a:hover {
+            text-decoration: underline;
+        }
+
+        /* About */
+        .about-content {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Contact */
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .contact-item {
+            background: white;
+            padding: 15px 30px;
+            border-radius: 10px;
+            text-decoration: none;
+            color: #333;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: transform 0.3s;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .contact-item:hover {
+            transform: translateY(-3px);
+        }
+
+        /* Resume Button */
+        .resume-section {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .btn-resume {
+            background: #667eea;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+        }
+
+        /* Footer */
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 30px;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <img src="https://via.placeholder.com/150" alt="Raina Khanam" class="profile-pic">
+            <h1>Raina Khanam</h1>
+            <p class="tagline">Data Analyst | SQL | Python | Power BI | Tableau</p>
+            <p>Turning raw data into actionable business insights</p>
+            <div style="margin-top: 20px;">
+                <a href="#projects" class="btn">View My Work</a>
+                <a href="resume.pdf" class="btn btn-outline" download>Download Resume</a>
+            </div>
+        </div>
+    </header>
+
+    <section id="skills">
+        <div class="container">
+            <h2 class="section-title">Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>📊 Data Analysis</h3>
+                    <div class="skill-items">
+                        <span class="skill-tag">SQL</span>
+                        <span class="skill-tag">Python (Pandas)</span>
+                        <span class="skill-tag">Excel</span>
+                        <span class="skill-tag">Statistics</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>📈 Visualization</h3>
+                    <div class="skill-items">
+                        <span class="skill-tag">Power BI</span>
+                        <span class="skill-tag">Tableau</span>
+                        <span class="skill-tag">Matplotlib</span>
+                        <span class="skill-tag">Seaborn</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>🛠️ Tools</h3>
+                    <div class="skill-items">
+                        <span class="skill-tag">Git/GitHub</span>
+                        <span class="skill-tag">Jupyter Notebook</span>
+                        <span class="skill-tag">DAX</span>
+                        <span class="skill-tag">AI Tools</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" style="background: #f5f7fa;">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="projects-grid">
+                
+                <!-- Project 3: E-Commerce -->
+                <div class="project-card">
+                    <div class="project-img" style="background: linear-gradient(135deg, #667eea, #764ba2); display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem;">🛍️</div>
+                    <div class="project-info">
+                        <h3 class="project-title">Brazilian E-Commerce Analytics</h3>
+                        <p class="project-desc">End-to-end analysis of 100,000+ orders to identify sales trends, customer segments, and delivery impact on satisfaction.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">SQL</span>
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Power BI</span>
+                            <span class="tech-tag">DAX</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/raina989/data-analytics-portfolio/tree/main/project-3-ecommerce-analysis" target="_blank">GitHub →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2: Customer Churn -->
+                <div class="project-card">
+                    <div class="project-img" style="background: linear-gradient(135deg, #f093fb, #f5576c); display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem;">📞</div>
+                    <div class="project-info">
+                        <h3 class="project-title">Customer Churn Analysis</h3>
+                        <p class="project-desc">Analyzed 7,043 customers to identify churn drivers. Found month-to-month customers are 15x more likely to churn.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Pandas</span>
+                            <span class="tech-tag">Matplotlib</span>
+                            <span class="tech-tag">AI Tools</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/raina989/data-analytics-portfolio/tree/main/project-2-customer-churn" target="_blank">GitHub →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 1: Superstore Sales -->
+                <div class="project-card">
+                    <div class="project-img" style="background: linear-gradient(135deg, #4facfe, #00f2fe); display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem;">🏪</div>
+                    <div class="project-info">
+                        <h3 class="project-title">Superstore Sales Analysis</h3>
+                        <p class="project-desc">Sales performance and product profitability analysis. Identified top products, regional trends, and discount impact.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">SQL</span>
+                            <span class="tech-tag">Power BI</span>
+                            <span class="tech-tag">DAX</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/raina989/data-analytics-portfolio/tree/main/project-1-superstore-sales" target="_blank">GitHub →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <p>I'm a passionate Data Analyst with expertise in SQL, Python, and BI tools. I love transforming complex data into clear, actionable insights that help businesses make better decisions.</p>
+                <br>
+                <p>My approach combines technical rigor with business acumen — I don't just build dashboards, I answer real business questions. I'm currently open to remote Data Analyst roles worldwide.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="resume" style="background: #f5f7fa;">
+        <div class="container">
+            <h2 class="section-title">Resume</h2>
+            <div class="resume-section">
+                <a href="#" class="btn-resume" download>📄 Download My Resume (PDF)</a>
+                <p style="margin-top: 15px; color: #666;">Coming soon — check back for the latest version</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <h2 class="section-title">Let's Connect</h2>
+            <div class="contact-links">
+                <a href="https://github.com/raina989" target="_blank" class="contact-item">
+                    <span>🐙</span> GitHub
+                </a>
+                <a href="https://linkedin.com/in/raina-khanam" target="_blank" class="contact-item">
+                    <span>🔗</span> LinkedIn
+                </a>
+                <a href="mailto:khanraina12@gmail.com" class="contact-item">
+                    <span>📧</span> Email
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Raina Khanam. All rights reserved.</p>
+            <p style="margin-top: 10px; opacity: 0.7;">Built with HTML/CSS | Hosted on GitHub Pages</p>
+        </div>
+    </footer>
+</body>
+</html>
