@@ -6,7 +6,6 @@
     <title>Raina Khanam | Data Analyst & AI Portfolio</title>
     <link rel="icon" type="image/png" href="RK.png">
     <style>
-        /* --- Your Existing CSS --- */
         * {
             margin: 0;
             padding: 0;
@@ -261,7 +260,7 @@
             }
         }
 
-        /* --- New Styles for Experience Section --- */
+        /* Experience Section */
         .experience-item {
             background: white;
             padding: 25px;
@@ -285,6 +284,28 @@
             margin-top: 10px;
             padding-left: 20px;
         }
+
+        /* Beta badge */
+        .beta-badge {
+            display: inline-block;
+            background: #f39c12;
+            color: white;
+            font-size: 0.7rem;
+            padding: 2px 10px;
+            border-radius: 20px;
+            margin-left: 10px;
+            font-weight: bold;
+            vertical-align: middle;
+        }
+        .status-note {
+            background: #fff3cd;
+            padding: 8px 15px;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            color: #856404;
+            margin-top: 10px;
+            border-left: 4px solid #f39c12;
+        }
     </style>
 </head>
 <body>
@@ -301,7 +322,7 @@
         </div>
     </header>
 
-    <!-- New Experience Section -->
+    <!-- Experience Section -->
     <section id="experience">
         <div class="container">
             <h2 class="section-title">Experience</h2>
@@ -370,16 +391,19 @@
         </div>
     </section>
 
-    <section id="projects" style="background: #f5f7fa;">
+    <!-- Tools I Built Section (Moved before Featured Projects) -->
+    <section id="tools" style="background: #f5f7fa;">
         <div class="container">
-            <h2 class="section-title">Featured Projects</h2>
+            <h2 class="section-title">Tools I Built</h2>
             <div class="projects-grid">
-                
-                <!-- NEW Project: PCOS Meal Builder (Your Personal Project) -->
+                <!-- PCOS Meal Tracker - Now under Tools I Built -->
                 <div class="project-card">
                     <div class="project-img" style="background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%); display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem;">🥗</div>
                     <div class="project-info">
-                        <h3 class="project-title">AI-Powered PCOS Meal Tracker</h3>
+                        <h3 class="project-title">
+                            AI-Powered PCOS Meal Tracker
+                            <span class="beta-badge">BETA</span>
+                        </h3>
                         <p class="project-desc">A Streamlit app designed to help manage PCOS through personalized meal planning, leveraging AI for recommendations and tracking.</p>
                         <div class="project-tech">
                             <span class="tech-tag">Streamlit</span>
@@ -388,12 +412,41 @@
                             <span class="tech-tag">Nutrition</span>
                         </div>
                         <div class="project-links">
-                            <a href="https://pcos-meal-builder-raina.streamlit.app/" target="_blank">🚀 Launch App</a>
+                            <a href="https://pcos-meal-builder-raina.streamlit.app/" target="_blank">🚀 Launch Beta App</a>
+                        </div>
+                        <div class="status-note">
+                            ⚡ <strong>Beta Launch:</strong> This is the initial release. I'm actively working on adding more features, improving the recommendation engine, and enhancing the user experience. Stay tuned for updates!
                         </div>
                     </div>
                 </div>
 
-                <!-- Project: Quantium Retail Analytics -->
+                <!-- Resume-JD Matcher -->
+                <div class="project-card">
+                    <div class="project-img" style="background: linear-gradient(135deg, #667eea, #764ba2); display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem;">📄➡️🎯</div>
+                    <div class="project-info">
+                        <h3 class="project-title">Resume-JD Matcher</h3>
+                        <p class="project-desc">Upload your resume + job description → Get match score, missing keywords, and improvement tips to optimize your job applications.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Streamlit</span>
+                            <span class="tech-tag">Sentence Transformers</span>
+                            <span class="tech-tag">PDF Parsing</span>
+                            <span class="tech-tag">NLP</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://resumealign-txfwxaovexerwupdz45r2d.streamlit.app/" target="_blank">🚀 Try it now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Projects Section -->
+    <section id="projects">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="projects-grid">
+                <!-- Quantium Retail Analytics -->
                 <div class="project-card">
                     <div class="project-img" style="background: linear-gradient(135deg, #FF6B6B, #4ECDC4); display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem;">📊</div>
                     <div class="project-info">
@@ -412,7 +465,7 @@
                     </div>
                 </div>
 
-                <!-- Project: NLP Article Analyzer -->
+                <!-- NLP Article Analyzer -->
                 <div class="project-card">
                     <div class="project-img" style="background: linear-gradient(135deg, #11998e, #38ef7d); display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem;">🤖</div>
                     <div class="project-info">
@@ -432,7 +485,7 @@
                     </div>
                 </div>
 
-                <!-- Project: Brazilian E-Commerce Analytics -->
+                <!-- Brazilian E-Commerce Analytics -->
                 <div class="project-card">
                     <div class="project-img" style="background: linear-gradient(135deg, #667eea, #764ba2); display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem;">🛍️</div>
                     <div class="project-info">
@@ -450,7 +503,7 @@
                     </div>
                 </div>
 
-                <!-- Project: Customer Churn Analysis -->
+                <!-- Customer Churn Analysis -->
                 <div class="project-card">
                     <div class="project-img" style="background: linear-gradient(135deg, #f093fb, #f5576c); display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem;">📞</div>
                     <div class="project-info">
@@ -468,7 +521,7 @@
                     </div>
                 </div>
 
-                <!-- Project: Superstore Sales Analysis -->
+                <!-- Superstore Sales Analysis -->
                 <div class="project-card">
                     <div class="project-img" style="background: linear-gradient(135deg, #4facfe, #00f2fe); display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem;">🏪</div>
                     <div class="project-info">
@@ -481,30 +534,6 @@
                         </div>
                         <div class="project-links">
                             <a href="https://github.com/raina989/data-analytics-portfolio/tree/main/project-1-sales-analysis" target="_blank">GitHub →</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="tools" style="background: #f5f7fa;">
-        <div class="container">
-            <h2 class="section-title">Tools I Built</h2>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-img" style="background: linear-gradient(135deg, #667eea, #764ba2); display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem;">📄➡️🎯</div>
-                    <div class="project-info">
-                        <h3 class="project-title">Resume-JD Matcher</h3>
-                        <p class="project-desc">Upload your resume + job description → Get match score, missing keywords, and improvement tips to optimize your job applications.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Streamlit</span>
-                            <span class="tech-tag">Sentence Transformers</span>
-                            <span class="tech-tag">PDF Parsing</span>
-                            <span class="tech-tag">NLP</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://resumealign-txfwxaovexerwupdz45r2d.streamlit.app/" target="_blank">🚀 Try it now</a>
                         </div>
                     </div>
                 </div>
