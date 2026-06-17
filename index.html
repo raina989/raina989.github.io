@@ -6,6 +6,7 @@
     <title>Raina Khanam | Data Analyst & AI Portfolio</title>
     <link rel="icon" type="image/png" href="RK.png">
     <style>
+        /* --- Your Existing CSS --- */
         * {
             margin: 0;
             padding: 0;
@@ -259,6 +260,31 @@
                 grid-template-columns: 1fr;
             }
         }
+
+        /* --- New Styles for Experience Section --- */
+        .experience-item {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        .experience-item h3 {
+            color: #667eea;
+            margin-bottom: 5px;
+        }
+        .experience-item .company {
+            font-weight: 600;
+            color: #333;
+        }
+        .experience-item .date {
+            color: #888;
+            font-size: 0.9rem;
+        }
+        .experience-item ul {
+            margin-top: 10px;
+            padding-left: 20px;
+        }
     </style>
 </head>
 <body>
@@ -274,6 +300,23 @@
             </div>
         </div>
     </header>
+
+    <!-- New Experience Section -->
+    <section id="experience">
+        <div class="container">
+            <h2 class="section-title">Experience</h2>
+            <div class="experience-item">
+                <h3>AI/ML Intern</h3>
+                <p class="company">Meritshot</p>
+                <p class="date">June 2026 - Present</p>
+                <ul>
+                    <li>Building and deploying machine learning models for real-world applications.</li>
+                    <li>Developing an AI-powered PCOS meal tracker application using Streamlit.</li>
+                    <li>Working on natural language processing and data science projects.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
 
     <section id="skills">
         <div class="container">
@@ -332,6 +375,24 @@
             <h2 class="section-title">Featured Projects</h2>
             <div class="projects-grid">
                 
+                <!-- NEW Project: PCOS Meal Builder -->
+                <div class="project-card">
+                    <div class="project-img" style="background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%); display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem;">🥗</div>
+                    <div class="project-info">
+                        <h3 class="project-title">AI-Powered PCOS Meal Tracker</h3>
+                        <p class="project-desc">A Streamlit app designed to help manage PCOS through personalized meal planning, leveraging AI for recommendations and tracking.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Streamlit</span>
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">AI</span>
+                            <span class="tech-tag">Nutrition</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://pcos-meal-builder-raina.streamlit.app/" target="_blank">🚀 Launch App</a>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- Project: Quantium Retail Analytics -->
                 <div class="project-card">
                     <div class="project-img" style="background: linear-gradient(135deg, #FF6B6B, #4ECDC4); display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem;">📊</div>
