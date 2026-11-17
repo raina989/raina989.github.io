@@ -1,591 +1,427 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Raina Khanam | Data Analyst & AI Portfolio</title>
-    <link rel="icon" type="image/png" href="RK.png">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #f5f7fa;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* Header */
-        header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 60px 0;
-            text-align: center;
-        }
-
-        .profile-pic {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            border: 4px solid white;
-            object-fit: cover;
-            margin-bottom: 20px;
-        }
-
-        h1 {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-        }
-
-        .tagline {
-            font-size: 1.2rem;
-            opacity: 0.9;
-            margin-bottom: 20px;
-        }
-
-        .btn {
-            display: inline-block;
-            background: white;
-            color: #667eea;
-            padding: 10px 25px;
-            border-radius: 25px;
-            text-decoration: none;
-            font-weight: bold;
-            margin: 5px;
-            transition: transform 0.3s;
-        }
-
-        .btn:hover {
-            transform: translateY(-2px);
-        }
-
-        .btn-outline {
-            background: transparent;
-            border: 2px solid white;
-            color: white;
-        }
-
-        /* Sections */
-        section {
-            padding: 60px 0;
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 2rem;
-            margin-bottom: 40px;
-            color: #333;
-        }
-
-        /* Skills */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-        }
-
-        .skill-category {
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-
-        .skill-category h3 {
-            color: #667eea;
-            margin-bottom: 15px;
-        }
-
-        .skill-items {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-
-        .skill-tag {
-            background: #e0e7ff;
-            color: #667eea;
-            padding: 5px 12px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-        }
-
-        /* Projects */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 30px;
-        }
-
-        .project-card {
-            background: white;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
-        }
-
-        .project-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .project-img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-        }
-
-        .project-info {
-            padding: 20px;
-        }
-
-        .project-title {
-            font-size: 1.3rem;
-            margin-bottom: 10px;
-            color: #333;
-        }
-
-        .project-desc {
-            color: #666;
-            margin-bottom: 15px;
-            font-size: 0.95rem;
-        }
-
-        .project-tech {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin-bottom: 15px;
-        }
-
-        .tech-tag {
-            background: #f0f0f0;
-            padding: 3px 10px;
-            border-radius: 15px;
-            font-size: 0.8rem;
-        }
-
-        .project-links a {
-            color: #667eea;
-            text-decoration: none;
-            margin-right: 15px;
-            font-size: 0.9rem;
-        }
-
-        .project-links a:hover {
-            text-decoration: underline;
-        }
-
-        /* About */
-        .about-content {
-            background: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            text-align: center;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        /* Contact */
-        .contact-links {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            flex-wrap: wrap;
-        }
-
-        .contact-item {
-            background: white;
-            padding: 15px 30px;
-            border-radius: 10px;
-            text-decoration: none;
-            color: #333;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            transition: transform 0.3s;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-
-        .contact-item:hover {
-            transform: translateY(-3px);
-        }
-
-        /* Resume Button */
-        .resume-section {
-            text-align: center;
-            margin-top: 30px;
-        }
-
-        .btn-resume {
-            background: #667eea;
-            color: white;
-            padding: 12px 30px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: bold;
-            display: inline-block;
-        }
-
-        .btn-resume:hover {
-            background: #5a67d8;
-        }
-
-        /* Footer */
-        footer {
-            background: #333;
-            color: white;
-            text-align: center;
-            padding: 30px;
-        }
-
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 1.8rem;
-            }
-            .projects-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        /* Experience Section */
-        .experience-item {
-            background: white;
-            padding: 25px;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            margin-bottom: 20px;
-        }
-        .experience-item h3 {
-            color: #667eea;
-            margin-bottom: 5px;
-        }
-        .experience-item .company {
-            font-weight: 600;
-            color: #333;
-        }
-        .experience-item .date {
-            color: #888;
-            font-size: 0.9rem;
-        }
-        .experience-item ul {
-            margin-top: 10px;
-            padding-left: 20px;
-        }
-
-        /* Beta badge */
-        .beta-badge {
-            display: inline-block;
-            background: #f39c12;
-            color: white;
-            font-size: 0.7rem;
-            padding: 2px 10px;
-            border-radius: 20px;
-            margin-left: 10px;
-            font-weight: bold;
-            vertical-align: middle;
-        }
-        .status-note {
-            background: #fff3cd;
-            padding: 8px 15px;
-            border-radius: 8px;
-            font-size: 0.85rem;
-            color: #856404;
-            margin-top: 10px;
-            border-left: 4px solid #f39c12;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f5f4ee">
+  <meta name="description" content="Raina Khanam — Computer Science graduate and Digital Transformation master's student building at the intersection of business, data, AI and technology.">
+  <meta property="og:title" content="Raina Khanam — Business × Technology">
+  <meta property="og:description" content="Digital transformation, data, AI and products built around real-world problems.">
+  <title>Raina Khanam — Business × Technology</title>
+  <link rel="icon" type="image/png" href="RK.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --paper: #f5f4ee;
+      --paper-deep: #ebece3;
+      --ink: #202b25;
+      --muted: #69756b;
+      --green: #385c48;
+      --green-dark: #263e32;
+      --sage: #dce5d8;
+      --sage-light: #e9eee5;
+      --line: rgba(38, 62, 50, .15);
+      --orange: #c77b52;
+      --white: #fffefa;
+      --mono: "DM Mono", monospace;
+      --sans: "DM Sans", sans-serif;
+      --display: "Manrope", sans-serif;
+      --width: 1160px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 92px; }
+    body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--sans); line-height: 1.65; -webkit-font-smoothing: antialiased; }
+    a { color: inherit; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    ::selection { background: #cdddc9; color: var(--green-dark); }
+    .shell { width: min(var(--width), calc(100% - 48px)); margin-inline: auto; }
+    .mono { font-family: var(--mono); text-transform: uppercase; letter-spacing: .12em; font-size: .69rem; }
+    .eyebrow { display: flex; align-items: center; gap: 11px; color: var(--green); }
+    .eyebrow:before { content: ""; width: 26px; height: 1px; background: var(--orange); }
+    .topbar { position: sticky; top: 0; z-index: 20; background: rgba(245,244,238,.88); backdrop-filter: blur(16px); border-bottom: 1px solid var(--line); }
+    .nav { min-height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 28px; }
+    .brand { display: inline-flex; align-items: center; gap: 11px; text-decoration: none; font-family: var(--display); font-weight: 800; letter-spacing: -.06em; font-size: 1.05rem; }
+    .brand-mark { width: 34px; height: 34px; display: grid; place-items: center; border-radius: 50%; background: var(--green); color: var(--paper); font-family: var(--display); font-size: .76rem; letter-spacing: -.04em; }
+    .nav-links { display: flex; align-items: center; gap: clamp(16px, 3vw, 34px); }
+    .nav-links a { color: var(--muted); text-decoration: none; font-size: .83rem; transition: color .2s; }
+    .nav-links a:hover { color: var(--green); }
+    .nav-links .nav-contact { padding: 10px 17px; border: 1px solid var(--green); border-radius: 99px; color: var(--green); }
+    .menu-toggle { display: none; border: 1px solid var(--line); background: transparent; color: var(--ink); padding: 9px 12px; border-radius: 99px; font: inherit; }
+    .hero { position: relative; overflow: hidden; padding: clamp(74px, 11vw, 142px) 0 94px; }
+    .hero:after { content: ""; position: absolute; width: 520px; height: 520px; border: 1px solid rgba(56,92,72,.12); border-radius: 47% 53% 60% 40% / 48% 42% 58% 52%; right: -190px; top: 30px; transform: rotate(-28deg); animation: drift 18s ease-in-out infinite alternate; pointer-events: none; }
+    .hero:before { content: ""; position: absolute; width: 340px; height: 340px; border: 1px solid rgba(199,123,82,.22); border-radius: 58% 42% 42% 58% / 45% 58% 42% 55%; right: -90px; top: 130px; animation: drift 22s ease-in-out infinite alternate-reverse; pointer-events: none; }
+    @keyframes drift { from { transform: translate3d(0,0,0) rotate(-22deg); } to { transform: translate3d(-28px,24px,0) rotate(12deg); } }
+    .hero-grid { position: relative; z-index: 1; display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(230px, .65fr); align-items: end; gap: 48px; }
+    .hero h1 { max-width: 820px; margin: 26px 0 22px; font: 600 clamp(3.25rem, 8vw, 7.4rem)/.99 var(--display); letter-spacing: -.085em; }
+    .hero h1 span { color: var(--green); font-weight: 500; }
+    .hero-copy { max-width: 650px; color: #59665c; font-size: clamp(1rem, 1.6vw, 1.17rem); line-height: 1.8; }
+    .hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 13px; margin-top: 34px; }
+    .button { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 48px; padding: 0 20px; border-radius: 99px; text-decoration: none; font-size: .87rem; font-weight: 600; transition: transform .2s, background .2s, color .2s; }
+    .button:hover { transform: translateY(-3px); }
+    .button-primary { background: var(--green); color: white; }
+    .button-primary:hover { background: var(--green-dark); }
+    .button-quiet { border: 1px solid var(--line); color: var(--ink); }
+    .button-quiet:hover { background: var(--white); }
+    .hero-aside { align-self: end; padding: 24px 0 6px 25px; border-left: 1px solid var(--line); }
+    .availability { display: inline-flex; align-items: center; gap: 8px; color: var(--green); margin-bottom: 21px; }
+    .pulse { width: 7px; height: 7px; background: #6c956c; border-radius: 50%; box-shadow: 0 0 0 5px rgba(108,149,108,.13); }
+    .hero-aside p { margin: 0 0 17px; color: var(--muted); font-size: .91rem; }
+    .hero-aside strong { display: block; color: var(--ink); font: 600 1.03rem var(--display); }
+    .scroll-cue { display: flex; align-items: center; gap: 12px; margin-top: 68px; color: var(--muted); }
+    .scroll-line { height: 1px; width: 48px; background: var(--orange); }
+    .ticker { overflow: hidden; border-block: 1px solid var(--line); background: var(--paper-deep); }
+    .ticker-track { display: flex; width: max-content; gap: 30px; padding: 17px 0; animation: ticker 34s linear infinite; }
+    .ticker span { display: inline-flex; align-items: center; gap: 30px; color: var(--green); white-space: nowrap; }
+    .ticker i { color: var(--orange); font-style: normal; }
+    @keyframes ticker { to { transform: translateX(-50%); } }
+    section { padding: clamp(76px, 10vw, 124px) 0; }
+    .section-head { display: flex; align-items: end; justify-content: space-between; gap: 30px; margin-bottom: 42px; }
+    .section-head h2 { margin: 14px 0 0; font: 600 clamp(2.1rem, 4.5vw, 3.8rem)/1.08 var(--display); letter-spacing: -.065em; }
+    .section-intro { max-width: 370px; margin: 0; color: var(--muted); font-size: .95rem; }
+    .about-grid { display: grid; grid-template-columns: .85fr 1.15fr; gap: clamp(38px, 8vw, 110px); align-items: start; }
+    .about-note { position: sticky; top: 120px; padding: 28px; background: var(--sage); border-radius: 4px 44px 4px 44px; }
+    .about-note .big-mark { font: 500 4rem/.9 var(--display); color: var(--green); letter-spacing: -.09em; }
+    .about-note p { margin: 22px 0 0; color: var(--green-dark); font-size: .95rem; }
+    .about-text p { margin: 0 0 19px; color: #566258; font-size: 1.04rem; line-height: 1.9; }
+    .about-text p strong { color: var(--ink); font-weight: 600; }
+    .mini-facts { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0 26px; margin-top: 34px; border-top: 1px solid var(--line); }
+    .fact { padding: 17px 0; border-bottom: 1px solid var(--line); }
+    .fact .mono { color: var(--muted); font-size: .62rem; }
+    .fact strong { display: block; margin-top: 5px; font: 600 .95rem var(--display); }
+    .experience { background: var(--green-dark); color: var(--paper); }
+    .experience .eyebrow { color: #c6d7c7; }
+    .experience .section-head h2 { color: var(--paper); }
+    .experience .section-intro { color: #c2cec3; }
+    .timeline { border-top: 1px solid rgba(255,255,255,.2); }
+    .timeline-item { display: grid; grid-template-columns: 190px minmax(0,1fr); gap: 35px; padding: 32px 0; border-bottom: 1px solid rgba(255,255,255,.2); }
+    .timeline-date { color: #b7c8b9; padding-top: 5px; }
+    .timeline-content h3 { margin: 0; font: 600 1.35rem var(--display); letter-spacing: -.03em; }
+    .timeline-content .org { margin: 5px 0 13px; color: #d1ddcf; font-size: .91rem; }
+    .timeline-content p { max-width: 740px; margin: 0; color: #c0cdc1; font-size: .94rem; line-height: 1.8; }
+    .timeline-content ul { margin: 12px 0 0; padding-left: 19px; color: #c0cdc1; font-size: .9rem; }
+    .timeline-content li { margin: 6px 0; padding-left: 4px; }
+    .tag-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 15px; }
+    .tag { padding: 5px 10px; border: 1px solid var(--line); border-radius: 99px; color: var(--muted); font: .67rem var(--mono); }
+    .experience .tag { border-color: rgba(255,255,255,.22); color: #d1ddcf; }
+    .projects-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 18px; }
+    .project-card { position: relative; min-height: 300px; display: flex; flex-direction: column; justify-content: space-between; overflow: hidden; padding: clamp(23px, 3vw, 34px); background: var(--white); border: 1px solid rgba(38,62,50,.08); border-radius: 5px 34px 5px 34px; text-decoration: none; transition: transform .28s, box-shadow .28s; }
+    .project-card:hover { transform: translateY(-6px); box-shadow: 0 18px 40px rgba(38,62,50,.09); }
+    .project-card.featured { background: var(--sage); }
+    .project-top { display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+    .project-index { color: var(--orange); }
+    .project-type { color: var(--muted); }
+    .project-card h3 { margin: 36px 0 10px; font: 600 clamp(1.45rem, 2.5vw, 2rem)/1.15 var(--display); letter-spacing: -.055em; }
+    .project-card p { max-width: 470px; margin: 0; color: #647066; font-size: .91rem; line-height: 1.8; }
+    .project-bottom { display: flex; justify-content: space-between; align-items: end; gap: 15px; margin-top: 28px; }
+    .project-bottom .tag-row { margin: 0; }
+    .project-arrow { flex: 0 0 auto; width: 34px; height: 34px; display: grid; place-items: center; border: 1px solid var(--line); border-radius: 50%; color: var(--green); font-size: 1.1rem; }
+    .project-card.no-link { cursor: default; }
+    .project-card.no-link:hover { transform: none; box-shadow: none; }
+    .programme-strip { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    .programme { padding: 27px; border: 1px solid var(--line); border-radius: 4px 26px 4px 26px; }
+    .programme .mono { color: var(--orange); }
+    .programme h3 { margin: 12px 0 5px; font: 600 1.2rem var(--display); }
+    .programme p { margin: 0; color: var(--muted); font-size: .9rem; }
+    .skills-section { background: var(--paper-deep); }
+    .skills-grid { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 14px; }
+    .skill-card { padding: 24px; background: rgba(255,254,250,.72); border-radius: 4px 24px 4px 24px; }
+    .skill-card h3 { margin: 0 0 17px; font: 600 1.04rem var(--display); }
+    .skill-card p { margin: 0; color: var(--muted); font-size: .88rem; line-height: 2; }
+    .education-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .education-card { padding: 25px 0; border-top: 1px solid var(--line); }
+    .education-card .mono { color: var(--orange); }
+    .education-card h3 { margin: 10px 0 4px; font: 600 1.12rem var(--display); }
+    .education-card p { margin: 0; color: var(--muted); font-size: .9rem; }
+    .contact { padding-bottom: 70px; }
+    .contact-panel { position: relative; overflow: hidden; padding: clamp(34px, 7vw, 76px); background: var(--sage); border-radius: 5px 56px 5px 56px; }
+    .contact-panel:after { content: ""; position: absolute; width: 300px; height: 300px; border: 1px solid rgba(56,92,72,.18); border-radius: 50% 45% 55% 40%; right: -100px; bottom: -170px; }
+    .contact-panel h2 { max-width: 720px; margin: 17px 0; font: 600 clamp(2.5rem, 6vw, 5rem)/1.02 var(--display); letter-spacing: -.075em; }
+    .contact-panel p { max-width: 540px; color: #59695d; }
+    .contact-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 27px; }
+    footer { padding: 24px 0 34px; color: var(--muted); font-size: .78rem; }
+    .footer-inner { display: flex; justify-content: space-between; align-items: center; gap: 20px; }
+    .footer-links { display: flex; gap: 18px; }
+    .footer-links a { text-decoration: none; }
+    .footer-links a:hover { color: var(--green); }
+    .reveal { opacity: 0; transform: translateY(22px); transition: opacity .7s ease, transform .7s cubic-bezier(.2,.7,.2,1); }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    @media (prefers-reduced-motion: reduce) {
+      *, *:before, *:after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+      .reveal { opacity: 1; transform: none; }
+    }
+    @media (max-width: 820px) {
+      .hero-grid { grid-template-columns: 1fr; gap: 35px; }
+      .hero-aside { max-width: 440px; }
+      .hero:before { right: -220px; }
+      .hero:after { right: -310px; }
+      .about-grid { grid-template-columns: 1fr; }
+      .about-note { position: relative; top: auto; max-width: 440px; }
+      .skills-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+      .timeline-item { grid-template-columns: 140px minmax(0,1fr); gap: 22px; }
+    }
+    @media (max-width: 620px) {
+      .shell { width: min(100% - 34px, var(--width)); }
+      .nav { min-height: 66px; }
+      .menu-toggle { display: inline-flex; }
+      .nav-links { display: none; position: absolute; top: 65px; left: 0; right: 0; padding: 18px 22px 23px; background: var(--paper); border-bottom: 1px solid var(--line); flex-direction: column; align-items: stretch; gap: 15px; }
+      .nav-links.open { display: flex; }
+      .nav-links .nav-contact { text-align: center; }
+      .hero { padding-top: 76px; }
+      .hero h1 { font-size: clamp(3.2rem, 16vw, 5rem); }
+      .hero-aside { padding-left: 18px; }
+      .section-head { display: block; }
+      .section-intro { margin-top: 18px; }
+      .projects-grid, .programme-strip, .skills-grid, .education-row { grid-template-columns: 1fr; }
+      .project-card { min-height: 275px; }
+      .timeline-item { grid-template-columns: 1fr; gap: 9px; padding: 25px 0; }
+      .timeline-date { font-size: .64rem; }
+      .mini-facts { grid-template-columns: 1fr 1fr; gap: 0 16px; }
+      .footer-inner { align-items: flex-start; flex-direction: column; }
+      .scroll-cue { margin-top: 45px; }
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <img src="RK.png" alt="Raina Khanam" class="profile-pic">
-            <h1>Raina Khanam</h1>
-            <p class="tagline">Data Analyst | AI/ML Practitioner | NLP & GenAI</p>
-            <p>Turning raw data into actionable insights | Exploring the frontiers of AI & Generative AI</p>
-            <div style="margin-top: 20px;">
-                <a href="#projects" class="btn">View My Work</a>
-                <a href="Resume_Raina_Khanam_n.pdf" class="btn btn-outline" download>Download Resume</a>
-            </div>
+  <div class="topbar">
+    <nav class="nav shell" aria-label="Main navigation">
+      <a class="brand" href="#home" aria-label="Raina Khanam home"><span class="brand-mark">RK</span> raina khanam</a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="nav-links">Menu +</button>
+      <div class="nav-links" id="nav-links">
+        <a href="#about">About</a><a href="#experience">Experience</a><a href="#work">Selected work</a><a href="#learning">Education</a>
+        <a class="nav-contact" href="#contact">Let's connect ↗</a>
+      </div>
+    </nav>
+  </div>
+
+  <main>
+    <header class="hero" id="home">
+      <div class="shell hero-grid">
+        <div>
+          <div class="eyebrow mono">Digital transformation · Data · Product</div>
+          <h1>Curious about<br>what <span>technology</span><br>can make possible.</h1>
+          <p class="hero-copy">I'm Raina — a Computer Science graduate and Digital Transformation master's student exploring how data, AI and thoughtful technology can solve real business problems. I like moving between the big picture and the details of actually building things.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#work">Explore my work <span aria-hidden="true">↘</span></a>
+            <a class="button button-quiet" href="Resume_Raina_Khanam_n.pdf" target="_blank" rel="noopener">View CV <span aria-hidden="true">↗</span></a>
+          </div>
+          <div class="scroll-cue mono"><span class="scroll-line"></span> A little more about me</div>
         </div>
+        <aside class="hero-aside">
+          <div class="availability mono"><span class="pulse"></span> Open to early-career opportunities</div>
+          <p><strong>Based in the UAE</strong>Interested in business analysis, digital transformation, data and technology roles.</p>
+          <p><strong>Currently</strong>MSc Digital Transformation · UOWD</p>
+          <p><strong>Also building</strong>Virena · an early-stage digital health venture</p>
+        </aside>
+      </div>
     </header>
 
-    <!-- Experience Section -->
-    <section id="experience">
-        <div class="container">
-            <h2 class="section-title">Experience</h2>
-            <div class="experience-item">
-                <h3>AI/ML Intern</h3>
-                <p class="company">Meritshot</p>
-                <p class="date">April 2026 - Present</p>
-                <ul>
-                    <li>Building and deploying machine learning models for real-world applications.</li>
-                    <li>Working on natural language processing and data science projects.</li>
-                    <li>Collaborating on AI-driven solutions for business problems.</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <section id="skills">
-        <div class="container">
-            <h2 class="section-title">Technical Skills</h2>
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <h3>📊 Data Analysis</h3>
-                    <div class="skill-items">
-                        <span class="skill-tag">SQL</span>
-                        <span class="skill-tag">Python (Pandas)</span>
-                        <span class="skill-tag">Excel</span>
-                        <span class="skill-tag">Statistics</span>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h3>📈 Visualization</h3>
-                    <div class="skill-items">
-                        <span class="skill-tag">Power BI</span>
-                        <span class="skill-tag">Tableau</span>
-                        <span class="skill-tag">Matplotlib</span>
-                        <span class="skill-tag">Seaborn</span>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h3>🤖 AI & Machine Learning</h3>
-                    <div class="skill-items">
-                        <span class="skill-tag">Word2Vec</span>
-                        <span class="skill-tag">TF-IDF</span>
-                        <span class="skill-tag">Sentiment Analysis</span>
-                        <span class="skill-tag">Topic Modeling</span>
-                        <span class="skill-tag">NLP</span>
-                        <span class="skill-tag">Vector Embeddings</span>
-                        <span class="skill-tag">Tokenization</span>
-                        <span class="skill-tag">Lemmatization</span>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h3>🛠️ Tools & Technologies</h3>
-                    <div class="skill-items">
-                        <span class="skill-tag">Git/GitHub</span>
-                        <span class="skill-tag">Jupyter Notebook</span>
-                        <span class="skill-tag">DAX</span>
-                        <span class="skill-tag">Streamlit</span>
-                        <span class="skill-tag">Scikit-learn</span>
-                        <span class="skill-tag">NLTK</span>
-                        <span class="skill-tag">Gensim</span>
-                        <span class="skill-tag">SpaCy</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Tools I Built Section -->
-    <section id="tools" style="background: #f5f7fa;">
-        <div class="container">
-            <h2 class="section-title">Tools I Built</h2>
-            <div class="projects-grid">
-                <!-- PCOS Meal Tracker -->
-                <div class="project-card">
-                    <div class="project-img" style="background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%); display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem;">🥗</div>
-                    <div class="project-info">
-                        <h3 class="project-title">
-                            AI-Powered PCOS Meal Tracker
-                            <span class="beta-badge">BETA</span>
-                        </h3>
-                        <p class="project-desc">An AI-powered PCOS meal planner with real-time macro tracking, glycemic index indicators, and ingredient swapping</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Streamlit</span>
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">AI</span>
-                            <span class="tech-tag">Nutrition</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://pcos-meal-builder-raina.streamlit.app/" target="_blank">🚀 Launch Beta App</a>
-                        </div>
-                        <div class="status-note">
-                            ⚡ <strong>Beta Launch:</strong> This is the initial release. I'm actively working on adding more features, improving the recommendation engine, and enhancing the user experience. Stay tuned for updates!
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Resume-JD Matcher -->
-                <div class="project-card">
-                    <div class="project-img" style="background: linear-gradient(135deg, #667eea, #764ba2); display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem;">📄➡️🎯</div>
-                    <div class="project-info">
-                        <h3 class="project-title">Resume-JD Matcher</h3>
-                        <p class="project-desc">Upload your resume + job description → Get match score, missing keywords, and improvement tips to optimize your job applications.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Streamlit</span>
-                            <span class="tech-tag">Sentence Transformers</span>
-                            <span class="tech-tag">PDF Parsing</span>
-                            <span class="tech-tag">NLP</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://resumealign-react.vercel.app/" target="_blank">🚀 Try it now</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Featured Projects Section -->
-    <section id="projects">
-        <div class="container">
-            <h2 class="section-title">Featured Projects</h2>
-            <div class="projects-grid">
-                <!-- Quantium Retail Analytics -->
-                <div class="project-card">
-                    <div class="project-img" style="background: linear-gradient(135deg, #FF6B6B, #4ECDC4); display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem;">📊</div>
-                    <div class="project-info">
-                        <h3 class="project-title">Quantium Retail Analytics - Simulation Job via The Forage</h3>
-                        <p class="project-desc">End-to-end analytics project for a chip category manager. Analyzed customer segments, brand affinity, and trial store performance using Python and statistical testing.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">Pandas</span>
-                            <span class="tech-tag">Statistical Testing</span>
-                            <span class="tech-tag">Data Visualization</span>
-                            <span class="tech-tag">Customer Segmentation</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="Chip_Category_Strategic_Report.pdf" target="_blank">Report PDF →</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- NLP Article Analyzer -->
-                <div class="project-card">
-                    <div class="project-img" style="background: linear-gradient(135deg, #11998e, #38ef7d); display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem;">🤖</div>
-                    <div class="project-info">
-                        <h3 class="project-title">NLP Article Analyzer</h3>
-                        <p class="project-desc">Complete NLP pipeline for news articles: topic modeling, sentiment analysis, TF-IDF, and Word2Vec similarity analysis.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Word2Vec</span>
-                            <span class="tech-tag">TF-IDF</span>
-                            <span class="tech-tag">Sentiment Analysis</span>
-                            <span class="tech-tag">Topic Modeling</span>
-                            <span class="tech-tag">NLTK</span>
-                            <span class="tech-tag">Scikit-learn</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/raina989/nlp-article-analyzer" target="_blank">GitHub →</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Brazilian E-Commerce Analytics -->
-                <div class="project-card">
-                    <div class="project-img" style="background: linear-gradient(135deg, #667eea, #764ba2); display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem;">🛍️</div>
-                    <div class="project-info">
-                        <h3 class="project-title">Brazilian E-Commerce Analytics</h3>
-                        <p class="project-desc">End-to-end analysis of 100,000+ orders to identify sales trends, customer segments, and delivery impact on satisfaction.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">SQL</span>
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">Power BI</span>
-                            <span class="tech-tag">DAX</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/raina989/data-analytics-portfolio/tree/main/project-3-capstone" target="_blank">GitHub →</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Customer Churn Analysis -->
-                <div class="project-card">
-                    <div class="project-img" style="background: linear-gradient(135deg, #f093fb, #f5576c); display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem;">📞</div>
-                    <div class="project-info">
-                        <h3 class="project-title">Customer Churn Analysis</h3>
-                        <p class="project-desc">Analyzed 7,043 customers to identify churn drivers. Found month-to-month customers are 15x more likely to churn.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">Pandas</span>
-                            <span class="tech-tag">Matplotlib</span>
-                            <span class="tech-tag">AI Tools</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/raina989/data-analytics-portfolio/tree/main/project-2-customer-insights" target="_blank">GitHub →</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Superstore Sales Analysis -->
-                <div class="project-card">
-                    <div class="project-img" style="background: linear-gradient(135deg, #4facfe, #00f2fe); display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem;">🏪</div>
-                    <div class="project-info">
-                        <h3 class="project-title">Superstore Sales Analysis</h3>
-                        <p class="project-desc">Sales performance and product profitability analysis. Identified top products, regional trends, and discount impact.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">SQL</span>
-                            <span class="tech-tag">Power BI</span>
-                            <span class="tech-tag">DAX</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/raina989/data-analytics-portfolio/tree/main/project-1-sales-analysis" target="_blank">GitHub →</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    <div class="ticker" aria-label="Areas of interest">
+      <div class="ticker-track mono">
+        <span>Business analysis <i>✳</i> Digital transformation <i>✳</i> Data & insight <i>✳</i> AI applications <i>✳</i> Product thinking <i>✳</i> Workflow automation <i>✳</i></span>
+        <span aria-hidden="true">Business analysis <i>✳</i> Digital transformation <i>✳</i> Data & insight <i>✳</i> AI applications <i>✳</i> Product thinking <i>✳</i> Workflow automation <i>✳</i></span>
+      </div>
+    </div>
 
     <section id="about">
-        <div class="container">
-            <h2 class="section-title">About Me</h2>
-            <div class="about-content">
-                <p>I'm a passionate Data Analyst with expertise in SQL, Python, and BI tools. Currently expanding my skills into AI/ML and Generative AI, with hands-on experience in NLP techniques, including Word2Vec, TF-IDF, sentiment analysis, and topic modeling.</p>
-                <br>
-                <p>My approach combines technical rigor with business acumen — I don't just build dashboards, I answer real business questions. Currently, building projects at the intersection of data analytics and artificial intelligence.</p>
-                <br>
-                <p>Open to remote Data Analyst and AI/ML roles worldwide.</p>
-            </div>
+      <div class="shell">
+        <div class="section-head reveal">
+          <div><div class="eyebrow mono">01 / A little context</div><h2>Business-minded.<br>Technically curious.</h2></div>
+          <p class="section-intro">I enjoy understanding a problem, finding the signal in the data, and figuring out what a useful solution could look like.</p>
         </div>
+        <div class="about-grid">
+          <div class="about-note reveal">
+            <div class="big-mark">↗</div>
+            <p>My favourite work sits where technology meets people, operations and better decisions.</p>
+          </div>
+          <div class="about-text reveal">
+            <p>My foundation is in <strong>Computer Science</strong>, and I'm currently pursuing an <strong>MSc in Digital Transformation at the University of Wollongong in Dubai</strong>. I'm interested in how organisations adopt technology in ways that improve processes, customer experiences and decision-making.</p>
+            <p>During my Data Science & AI internship at Meritshot, I worked on business-focused projects involving customer churn, predictive modelling, student performance and text classification. The work taught me to look beyond the model and ask what the findings mean for a real decision.</p>
+            <p>Outside my studies, I founded <strong>Virena</strong>, an early-stage digital health venture where I've been developing product prototypes and speaking with potential users. I also build small tools to solve everyday problems — including JobPilot, an automated job-search assistant.</p>
+            <div class="mini-facts">
+              <div class="fact"><span class="mono">01 / Education</span><strong>BSc Computer Science</strong></div>
+              <div class="fact"><span class="mono">02 / Now learning</span><strong>Digital Transformation</strong></div>
+              <div class="fact"><span class="mono">03 / Selected for</span><strong>PwC ElevateME</strong></div>
+              <div class="fact"><span class="mono">04 / Building</span><strong>Virena & JobPilot</strong></div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <section id="resume" style="background: #f5f7fa;">
-        <div class="container">
-            <h2 class="section-title">Resume</h2>
-            <div class="resume-section">
-                <a href="Resume_Raina_Khanam_n.pdf" class="btn-resume" download>📄 Download My Resume (PDF)</a>
-                <p style="margin-top: 15px; color: #666;">Last updated: June 2026</p>
-            </div>
+    <section class="experience" id="experience">
+      <div class="shell">
+        <div class="section-head reveal">
+          <div><div class="eyebrow mono">02 / Experience</div><h2>Learning by<br>doing the work.</h2></div>
+          <p class="section-intro">A mix of applied analytics, product building and early-stage venture experience.</p>
         </div>
+        <div class="timeline">
+          <article class="timeline-item reveal">
+            <div class="timeline-date mono">2026 — PRESENT</div>
+            <div class="timeline-content">
+              <h3>Founder</h3><div class="org">Virena · Sheraa startup member</div>
+              <p>Building an early-stage digital health product focused on helping people make more informed everyday food choices.</p>
+              <ul>
+                <li>Developed an initial working prototype using Python, Streamlit and Supabase, exploring nutritional analysis and food recommendations.</li>
+                <li>Conducting customer discovery and validation interviews to understand user needs and prioritise product direction.</li>
+                <li>Leading development of a newer TypeScript and PostgreSQL-based application, with attention to data security and structured AI workflows.</li>
+              </ul>
+              <div class="tag-row"><span class="tag">Product development</span><span class="tag">Customer discovery</span><span class="tag">AI applications</span><span class="tag">Supabase</span></div>
+            </div>
+          </article>
+          <article class="timeline-item reveal">
+            <div class="timeline-date mono">APR — AUG 2026</div>
+            <div class="timeline-content">
+              <h3>Data Science & AI Intern</h3><div class="org">Meritshot · Remote</div>
+              <p>Applied data analysis and machine learning to business and research-style problems, translating findings into practical recommendations.</p>
+              <ul>
+                <li>Analysed telecom customer churn, identifying a 42.7% churn rate among month-to-month customers; built a predictive model that identified 56% of churners.</li>
+                <li>Recommended retention interventions including annual-plan incentives and targeted welcome programmes.</li>
+                <li>Analysed data from 1,000 students, identifying associations between lunch type, test preparation and academic performance.</li>
+                <li>Developed an AI-versus-human text classifier using 2,000 texts across three domains, alongside deployment and monitoring considerations.</li>
+              </ul>
+              <div class="tag-row"><span class="tag">Python</span><span class="tag">SQL</span><span class="tag">Predictive analytics</span><span class="tag">Business insights</span></div>
+            </div>
+          </article>
+        </div>
+      </div>
     </section>
 
-    <section id="contact">
-        <div class="container">
-            <h2 class="section-title">Let's Connect</h2>
-            <div class="contact-links">
-                <a href="https://github.com/raina989" target="_blank" class="contact-item">
-                    <span>🐙</span> GitHub
-                </a>
-                <a href="https://instagram.com/rainacodes" target="_blank" class="contact-item">
-                    <span>📸</span> Instagram
-                </a>
-                <a href="mailto:sheisraina@gmail.com" class="contact-item">
-                    <span>📧</span> Email
-                </a>
-            </div>
+    <section id="work">
+      <div class="shell">
+        <div class="section-head reveal">
+          <div><div class="eyebrow mono">03 / Selected work</div><h2>Ideas, made tangible.</h2></div>
+          <p class="section-intro">A selection of products and projects where I've explored data, automation, AI and practical problem-solving.</p>
         </div>
+        <div class="projects-grid">
+          <a class="project-card featured reveal" href="https://github.com/raina989/tryvirenahealth" target="_blank" rel="noopener">
+            <div><div class="project-top"><span class="project-index mono">01 / Venture</span><span class="project-type mono">Product in progress</span></div><h3>Virena</h3><p>An early-stage digital health companion exploring personalised food guidance and practical ingredient adaptations. Built through iterative prototyping and customer discovery.</p></div>
+            <div class="project-bottom"><div class="tag-row"><span class="tag">Product</span><span class="tag">TypeScript</span><span class="tag">PostgreSQL</span></div><span class="project-arrow">↗</span></div>
+          </a>
+          <div class="project-card no-link reveal">
+            <div><div class="project-top"><span class="project-index mono">02 / Automation</span><span class="project-type mono">Personal project</span></div><h3>JobPilot</h3><p>An automated job-search assistant that gathers roles from multiple sources, removes duplicates, evaluates relevance with AI and sends a daily email digest. Built with resilient source handling.</p></div>
+            <div class="project-bottom"><div class="tag-row"><span class="tag">TypeScript</span><span class="tag">PostgreSQL</span><span class="tag">Gemini API</span></div><span class="project-arrow" aria-hidden="true">↗</span></div>
+          </div>
+          <a class="project-card reveal" href="https://resumealign-react.vercel.app/" target="_blank" rel="noopener">
+            <div><div class="project-top"><span class="project-index mono">03 / AI application</span><span class="project-type mono">Try the tool</span></div><h3>ResumeAlign</h3><p>A resume-to-job-description matching tool that uses semantic similarity to highlight alignment, identify missing skills and suggest improvements.</p></div>
+            <div class="project-bottom"><div class="tag-row"><span class="tag">Python</span><span class="tag">Streamlit</span><span class="tag">Scikit-learn</span></div><span class="project-arrow">↗</span></div>
+          </a>
+          <a class="project-card reveal" href="Chip_Category_Strategic_Report.pdf" target="_blank" rel="noopener">
+            <div><div class="project-top"><span class="project-index mono">04 / Retail analytics</span><span class="project-type mono">Forage simulation</span></div><h3>Quantium Retail Analytics</h3><p>Analysed customer segments, brand affinity and trial-store performance for a chip-category business question using Python and statistical testing.</p></div>
+            <div class="project-bottom"><div class="tag-row"><span class="tag">Python</span><span class="tag">Pandas</span><span class="tag">Statistics</span></div><span class="project-arrow">↗</span></div>
+          </a>
+          <a class="project-card reveal" href="https://github.com/raina989/data-analytics-portfolio/tree/main/project-3-capstone" target="_blank" rel="noopener">
+            <div><div class="project-top"><span class="project-index mono">05 / Customer analytics</span><span class="project-type mono">Data project</span></div><h3>Brazilian E-Commerce Analytics</h3><p>Explored more than 100,000 orders to understand sales patterns, customer segments and the relationship between delivery experience and satisfaction.</p></div>
+            <div class="project-bottom"><div class="tag-row"><span class="tag">SQL</span><span class="tag">Power BI</span><span class="tag">DAX</span></div><span class="project-arrow">↗</span></div>
+          </a>
+          <a class="project-card reveal" href="https://github.com/raina989/data-analytics-portfolio/tree/main/project-2-customer-insights" target="_blank" rel="noopener">
+            <div><div class="project-top"><span class="project-index mono">06 / Predictive analytics</span><span class="project-type mono">Data project</span></div><h3>Customer Churn Analysis</h3><p>Analysed 7,043 telecom customers to identify churn drivers and explore how customer behaviour can inform retention strategies.</p></div>
+            <div class="project-bottom"><div class="tag-row"><span class="tag">Python</span><span class="tag">Pandas</span><span class="tag">Visualisation</span></div><span class="project-arrow">↗</span></div>
+          </a>
+          <a class="project-card reveal" href="https://github.com/raina989/nlp-article-analyzer" target="_blank" rel="noopener">
+            <div><div class="project-top"><span class="project-index mono">07 / Natural language</span><span class="project-type mono">GitHub</span></div><h3>NLP Article Analyzer</h3><p>A news-article analysis pipeline exploring sentiment, topic modelling, TF-IDF and Word2Vec similarity.</p></div>
+            <div class="project-bottom"><div class="tag-row"><span class="tag">NLP</span><span class="tag">Word2Vec</span><span class="tag">Scikit-learn</span></div><span class="project-arrow">↗</span></div>
+          </a>
+          <a class="project-card reveal" href="https://github.com/raina989/data-analytics-portfolio/tree/main/project-1-sales-analysis" target="_blank" rel="noopener">
+            <div><div class="project-top"><span class="project-index mono">08 / Business intelligence</span><span class="project-type mono">GitHub</span></div><h3>Superstore Sales Analysis</h3><p>Explored sales performance, product profitability, regional patterns and the impact of discounts using SQL and Power BI.</p></div>
+            <div class="project-bottom"><div class="tag-row"><span class="tag">SQL</span><span class="tag">Power BI</span><span class="tag">DAX</span></div><span class="project-arrow">↗</span></div>
+          </a>
+        </div>
+      </div>
     </section>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2026 Raina Khanam. All rights reserved.</p>
-            <p style="margin-top: 10px; opacity: 0.7;">Built with HTML/CSS | Hosted on GitHub Pages</p>
+    <section id="recognition" style="padding-top:0">
+      <div class="shell">
+        <div class="section-head reveal">
+          <div><div class="eyebrow mono">04 / Programmes & community</div><h2>Growing through<br>good conversations.</h2></div>
+          <p class="section-intro">Learning alongside founders and professionals, and putting ideas into practice.</p>
         </div>
-    </footer>
+        <div class="programme-strip">
+          <article class="programme reveal"><div class="mono">2026 · Selected mentee</div><h3>PwC ElevateME Mentorship Programme</h3><p>Selected for a professional mentorship programme focused on career development, business understanding and professional growth.</p></article>
+          <article class="programme reveal"><div class="mono">2026 · Selected participant</div><h3>Nestlé NextGen Founders</h3><p>Selected participant in the Validation Sprint, developing and testing the Virena concept, customer proposition and early UAE pilot assumptions.</p></article>
+          <article class="programme reveal"><div class="mono">2026 · Startup community</div><h3>Sheraa</h3><p>Member of Sharjah Entrepreneurship Center's startup community through my work on Virena.</p></article>
+          <article class="programme reveal"><div class="mono">Ongoing · Learning</div><h3>Build, test, learn</h3><p>Interested in practical ways organisations can adopt technology, improve processes and create better customer experiences.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="skills-section" id="toolkit">
+      <div class="shell">
+        <div class="section-head reveal">
+          <div><div class="eyebrow mono">05 / Toolkit</div><h2>What I work with.</h2></div>
+          <p class="section-intro">A growing toolkit across analysis, application development and business-focused problem-solving.</p>
+        </div>
+        <div class="skills-grid">
+          <article class="skill-card reveal"><h3>Business & transformation</h3><p>Business analysis · Digital transformation · KPI definition · Customer discovery · Process improvement · Stakeholder reporting · Responsible AI</p></article>
+          <article class="skill-card reveal"><h3>Data & analytics</h3><p>Python · SQL · Pandas · Excel · Power BI · Tableau · DAX · Data visualisation · Statistical analysis</p></article>
+          <article class="skill-card reveal"><h3>AI & machine learning</h3><p>Scikit-learn · NLP · Generative AI · Semantic similarity · Predictive modelling · Vector embeddings</p></article>
+          <article class="skill-card reveal"><h3>Development</h3><p>TypeScript · Python · Streamlit · REST APIs · Git · GitHub · Lovable</p></article>
+          <article class="skill-card reveal"><h3>Data & platforms</h3><p>PostgreSQL · Supabase · Relational databases · Row-level security · Webhooks</p></article>
+          <article class="skill-card reveal"><h3>Languages</h3><p>English · Hindi · Urdu</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="learning">
+      <div class="shell">
+        <div class="section-head reveal">
+          <div><div class="eyebrow mono">06 / Education</div><h2>The foundations.</h2></div>
+          <p class="section-intro">Combining a technical academic foundation with a broader understanding of how organisations transform.</p>
+        </div>
+        <div class="education-row">
+          <article class="education-card reveal"><div class="mono">2026 — Present</div><h3>MSc Digital Transformation</h3><p>University of Wollongong in Dubai</p></article>
+          <article class="education-card reveal"><div class="mono">2021 — 2024</div><h3>BSc Computer Science</h3><p>University of Wollongong in Dubai</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="shell">
+        <div class="contact-panel reveal">
+          <div class="eyebrow mono">07 / Get in touch</div>
+          <h2>Good work starts<br>with a conversation.</h2>
+          <p>I'm open to connecting with teams working across digital transformation, business analysis, data, technology and innovation in the UAE.</p>
+          <div class="contact-actions">
+            <a class="button button-primary" href="mailto:sheisraina@gmail.com">Email me ↗</a>
+            <a class="button button-quiet" href="https://github.com/raina989" target="_blank" rel="noopener">GitHub profile ↗</a>
+            <a class="button button-quiet" href="Resume_Raina_Khanam_n.pdf" target="_blank" rel="noopener">View CV ↗</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="shell footer-inner">
+      <span>© <span id="year">2026</span> Raina Khanam · Made with curiosity.</span>
+      <div class="footer-links"><a href="#home">Back to top ↑</a><a href="https://github.com/raina989" target="_blank" rel="noopener">GitHub</a><a href="mailto:sheisraina@gmail.com">Email</a></div>
+    </div>
+  </footer>
+
+  <script>
+    const menuButton = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    menuButton.addEventListener('click', () => {
+      const open = navLinks.classList.toggle('open');
+      menuButton.setAttribute('aria-expanded', String(open));
+      menuButton.textContent = open ? 'Close −' : 'Menu +';
+    });
+    navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      menuButton.setAttribute('aria-expanded', 'false');
+      menuButton.textContent = 'Menu +';
+    }));
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(element => observer.observe(element));
+  </script>
 </body>
 </html>
